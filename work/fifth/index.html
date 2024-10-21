@@ -92,12 +92,12 @@
 
             if (selectedValue === 'all') {
               $(this).show();
+              return;
+            }
+            if (categoryType === selectedValue) {
+              $(this).show();
             } else {
-              if (categoryType === selectedValue) {
-                $(this).show();
-              } else {
-                $(this).hide();
-              }
+              $(this).hide();
             }
           });
         }
