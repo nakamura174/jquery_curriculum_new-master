@@ -58,7 +58,7 @@
           let namePoke = '';
           res.names.forEach(function(name) {
             if (name.language.name === 'ja-Hrkt') {
-              return namePoke = name.name;
+              namePoke = name.name;
             }
           });
           $('#wrapper').find('p').text(namePoke);
@@ -67,7 +67,6 @@
             url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`,
             method: 'GET'
           }).done(function(res) {
-            console.log(res);
             let imgPoke = res.sprites.front_default;
             $('#wrapper').find('img').attr('src', imgPoke);
           }).fail(function(err) {
